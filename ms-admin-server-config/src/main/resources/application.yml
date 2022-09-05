@@ -10,7 +10,7 @@ spring:
     config:
       server: 
         native:
-          searchLocations: file:///D:/AmbDesarrollo/Cursos/2022/MICROJAVA220822/ms-admin-server-data
+          searchLocations: file:///C:/Users/USUARIO/Documents/GitHub/MICROSERVICIOS-SpringBoot/ms-admin-server-data
 
 #Configuracion Cloud (git)
 #  cloud:

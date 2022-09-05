@@ -14,7 +14,7 @@ import pe.edu.galaxy.training.java.ms.pedidos.gestion.productos.service.Producto
 @RequestMapping("/v1/productos")
 public class ProductoController {
 	
-	private ProductoService productoService;
+	private final ProductoService productoService;
 	
 	public ProductoController(ProductoService productoService) {
 		this.productoService=productoService;

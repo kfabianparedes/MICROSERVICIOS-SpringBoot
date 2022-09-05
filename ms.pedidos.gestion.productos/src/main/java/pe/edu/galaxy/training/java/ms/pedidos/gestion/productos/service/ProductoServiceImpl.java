@@ -8,7 +8,7 @@ import pe.edu.galaxy.training.java.ms.pedidos.gestion.productos.repository.Produ
 @Service
 public class ProductoServiceImpl implements ProductoService {
 	
-	private ProductoRepository productoRepository;
+	private final ProductoRepository productoRepository;
 	
 	public ProductoServiceImpl(ProductoRepository productoRepository) {
 		this.productoRepository=productoRepository;
