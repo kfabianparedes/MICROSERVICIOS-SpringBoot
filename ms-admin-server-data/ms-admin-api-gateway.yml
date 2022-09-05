@@ -1,12 +1,41 @@
 server:
-  port: 8889
+  port: 8887
 
 eureka:
-  instance:
-    hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    fetch-registry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
-  wait-time-in-ms-when-sync-empty: 0
+      defaultZone: http://localhost:8889/eureka
+
+# Matricula de Microservicios
+spring:
+  cloud:
+    gateway:
+      discovery.locator:    #A
+        enabled: true
+        lowerCaseServiceId: true
+      routes:
+##Llamar a nuestro microservicio
+#      - id: id-ms-gestion-productos
+#        uri: lb://MS-GESTION-PRODUCTOS
+#        predicates:
+#        - Path=/ms-productos/**
+#        filters:
+#        - RewritePath=/ms-productos/(?<path>.*), /$\{path}
+##Llamar a otro microservicio externo
+#      - id: albums
+#        uri: https://jsonplaceholder.typicode.com/albums
+#        predicates:
+#        - Path=/albums
+
+# Activacion de endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    gateway:
+      enabled: true
+    health:
+      show-details: always

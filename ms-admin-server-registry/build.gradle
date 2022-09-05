@@ -18,6 +18,7 @@ ext {
 
 dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	//Starter-config y Starter bootstrap para poder aagregar tu microservicio al config server
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
