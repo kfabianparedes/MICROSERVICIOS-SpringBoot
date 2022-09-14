@@ -2,11 +2,7 @@ package pe.edu.galaxy.training.java.ms.pedidos.gestion.clientes.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import pe.edu.galaxy.training.java.ms.pedidos.gestion.clientes.entity.Cliente;
 import pe.edu.galaxy.training.java.ms.pedidos.gestion.clientes.service.ClienteService;
@@ -21,12 +17,15 @@ public class ClienteController {
 		this.clienteService=clienteService;
 		
 	}
-	
 	@GetMapping
 	public ResponseEntity<?> findAll(){
 		return  ResponseEntity.ok(clienteService.findAll());
 	}
 
+	@GetMapping("/{id}")
+	public ResponseEntity<?> findById(@PathVariable("id") Long id){
+		return ResponseEntity.ok(clienteService.findById(id));
+	};
 	@PostMapping
 	public ResponseEntity<?> save(@RequestBody Cliente producto ){
 		return  ResponseEntity.status(HttpStatus.CREATED).body(clienteService.save(producto));

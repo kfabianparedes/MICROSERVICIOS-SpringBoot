@@ -1,6 +1,8 @@
 package pe.edu.galaxy.training.java.ms.pedidos.gestion.clientes.service;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import pe.edu.galaxy.training.java.ms.pedidos.gestion.clientes.entity.Cliente;
@@ -19,7 +21,10 @@ public class ClienteServiceImpl implements ClienteService {
 	public List<Cliente> findAll() {
 		return clienteRepository.findAll();
 	}
-
+	@Override
+	public Optional<Cliente> findById(Long id) {
+		return clienteRepository.findById(id);
+	}
 	@Override
 	public Cliente save(Cliente producto) {
 		return clienteRepository.save(producto);

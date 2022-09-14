@@ -1,0 +1,42 @@
+server:
+  port: 8083
+
+# Oracle #
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: MICROJAVA220822_PEDIDOS
+    password: 1234
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+# Registry Client
+eureka:
+  client:
+     fetch-registry: true
+     serviceUrl:
+        defaultZone: http://localhost:8889/eureka
+
+# Actuator
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+
+#Metrics related configurations
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#  metrics:
+#    export:
+#      prometheus:
+#        enabled: true
