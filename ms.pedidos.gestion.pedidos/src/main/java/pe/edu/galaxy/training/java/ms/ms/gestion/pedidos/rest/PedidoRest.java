@@ -25,8 +25,7 @@ public class PedidoRest {
 
 	@Autowired
 	private PedidoService	pedidoService;
-	
-	
+
 	@GetMapping
 	public ResponseEntity<?> findLike(@RequestParam(name = "nombre", defaultValue = "") String nombre){
 		try {

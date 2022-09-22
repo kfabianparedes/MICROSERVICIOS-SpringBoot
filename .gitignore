@@ -2,6 +2,8 @@
 Servers
 .metadata
 .settings
+.idea
+/.idea/
 target
 .classpath
 .project
